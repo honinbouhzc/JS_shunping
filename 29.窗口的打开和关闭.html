@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>窗口的打开和关闭</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function openWindow(){
+			//open()用于打开一个新的浏览器窗口或查找一个已命名的窗口,也可以设置成_blank或者_self。第一个参数是要打开的新页面，第二个参数是新窗口的名称，第三个参数是特征；
+			var myNewWindow = 0;
+			myNewWindow = window.open('28.定时抛售股票案例.html','_blank','width=200px,height=200px,resizable=yes','');
+			//窗口的名称hi可以访问新窗口
+			//myNewWindow.document.write('hello 100');
+			//如果希望打开的新窗口5s后自动关闭	
+			myNewWindow.setTimeout('close()',5000);
+		}
+
+		function closeWindow(){
+			if (confirm('真的要关闭吗？')) {
+				window.close();
+			} else {
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="打开新窗口" onclick="openWindow()">
+	<input type="button" value="关闭窗口" onclick="closeWindow()">
+</body>
+</html>

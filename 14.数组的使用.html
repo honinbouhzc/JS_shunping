@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组的使用</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//显示一个不存在的数据是，显示undifined
+		// var arr = [10,90];
+		// allert(arr[3]);
+
+		var city = ['beijing','shanghai'];
+		//给一个存在的数据重新赋值，相当于覆盖
+		city[0]='tianjin';
+		//给一个不存在的数据赋值，相当于数组动态增长
+		city[2]='shenyang';
+		city[6]='chongqin';
+		//当我们直接输出这个数组名，会显示全部数据
+		document.write(city + '<br>');
+		document.write(city.length + '<br>');//7
+
+		var str = "beijing tianjin shenyang";
+		var ci = str.split(' ');
+		document.write(ci + '<br>');
+
+		var str1 = "chongqin|changchun|dalian";
+		var ci1 = str1.split('|');
+		document.write(ci1 + '<br>');
+
+		//数组遍历的另外一种方法
+		var type = [90,0,12,'beijing',true];
+		for(var key in type){
+			document.write(key + ' ' +type[key] + '<br>');
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

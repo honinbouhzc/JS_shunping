@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>变量的作用域及其他说明</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//定义一个全局变量
+		var num1 = 100;
+		//又一个全局变量	
+		num2 = 200;
+		function sayHello(){
+			//定义一个局部变量，只能函数内使用
+			var a = 100;
+			//b 是一个全局变量,隐式声明
+			b = 200;
+			alert(a);
+			alert(b);
+		}
+		sayHello();
+		//alert(a);//出错，未声明这个函数
+		alert(b);//200
+
+
+		//写一个函数，计算传入数值的和，但不确定参数的具体个数
+		function sum(){
+			var parameters_length = arguments.length;
+			var sum = 0;
+			for (var i = 0; i < parameters_length; i++) {
+				alert(arguments[i]);
+				sum += arguments[i];
+			}
+			alert(sum)
+		}
+		//sum(1,5,7);
+		sum(3,87,345,12,5);
+
+		//用函数来完成打印九九乘法表
+		function print99(num){
+			for (var i = 1; i <= num; i++) {
+				for (var j = 1; j <= i; j++) {
+					document.write(j + '*' + i +'=' + (i*j) + '&nbsp;&nbsp;&nbsp;');
+				}
+				document.write('<br>');
+			}
+		}
+		print99(5);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

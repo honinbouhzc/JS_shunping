@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二维数组</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//一维数组的元素还可以是一个数组
+		var arr = [
+				[1,13,'se',false],
+				[23,'pliot','name',true,17]
+				];
+		//显示某个二维数组的元素，数组名[行下标][列下标]；
+		document.write(arr[1][2] + '<br>');//name
+		document.write(arr[0][1] +'<br>');//13
+
+		//二维数组的遍历
+		var cas = [
+				[0,0,0,0,0,0],
+				[0,0,1,0,0,0,1],
+				[0,2,0,3,0,0,1,6],
+				[0,0,0,0,0,0]
+			];
+		var arr_le1 = cas.length;
+			for(var i = 0; i < arr_le1 ; i++){
+				var arr_le2 = cas[i].length;
+				for(var j = 0; j < arr_le2; j++){
+					document.write(cas[i][j]+ ' ');
+				} 
+				document.write('<br>');
+			}
+		//——————————二维数组的平均值
+		var num = [
+				[6,90,90],
+				[7,20,30]
+				];
+		var sum = 0;
+		var count = 0;
+		var num_len1 = num.length;
+		for (var i = 0; i < num_len1; i++) {
+			var num_len2 = num[i].length;
+			count += num_len2;//每个一维数组的个数
+			for(var j = 0; j <  num_len2; j++){
+				sum += num[i][j];
+				document.write('总和：' + sum + '--平均值：' + (sum/count));
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

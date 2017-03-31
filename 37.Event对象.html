@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//Event对象是用户操作或者运行是产生的，这个对象是动态的
+
+		//事件绑定的方式
+		//1 直接再某个HTML控件上绑定 比如onchlick()
+		//2 getElementById('')；获取控件后，再绑定
+		window.onload = init;//表示当页面全部加载完毕后，由浏览器自动的调用
+		function init(){//初始化
+			document.getElementById('button1').onclick  = test;
+
+			//也可以这样写函数
+			//document.getElementById('button1').onclick  = function(){
+			//	alert('ok');
+			//}
+		}
+		function test(){
+			alert('ok');
+		} 
+	</script>
+</head>
+<body>
+<input type="button" value="点击" id="button1">
+</body>
+</html>

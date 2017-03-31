@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navigator对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//1 获取NAVi对象的属性userAgnet
+		var browser_type = navigator.userAgent;
+		if (browser_type.indexOf('Chrome') >= 0) {
+			alert('你使用了谷歌CHROME浏览器');
+		} else if(browser_type.indexOf('MSIE') >= 0) {
+			alert('你使用了IE浏览器');
+		}else if(browser_type.indexOf('Firefox') >= 0){
+			alert('你使用了火狐浏览器');
+		} else{
+			alert('你使用了其他浏览器');
+		}
+		//判断系统位数
+		document.write(navigator.platform +'<br>');//win32
+		//是否启用了cookie
+		document.write(navigator.cookieEnabled);
+	</script>
+</head>
+<body>
+	<h1>判断浏览器的类型</h1>
+	<p>你使用了哪种浏览器</p>
+</body>
+</html>

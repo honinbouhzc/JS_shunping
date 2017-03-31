@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>显示书籍信息</title>
+	<meta charset="utf-8">
+	<!-- <script type="text/javascript">
+		//1. 我们可以获得div通过display属性来控制显示和隐藏
+		//2. 图片可以通过.src来修改
+	</script> -->
+	<style type="text/css">
+		/*#show{
+			display: block;
+		}*/
+		#hide{
+			display: none;
+		}
+		#state{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="show" value="显示" onclick="showState()">
+	<input type="button" id="hide" value="隐藏" onclick="hideState()">
+	<div id="state">
+		<ul>
+			<li>NSW</li>
+			<li>VIC</li>
+			<li>QLD</li>
+			<li>TAS</li>
+			<li>other</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		
+		function showState(){	
+			var show_obj = $('show');
+			var hide_obj = $('hide');
+			var state_obj = $('state');	
+			show_obj.style.display =='none';
+			hide_obj.style.display =='block';
+			state_obj.style.display =='block';			
+		}
+
+		function hideState(){
+			var show_obj = $('show');
+			var hide_obj = $('hide');
+			var state_obj =$('state');	
+			show_obj.style.display =='block';
+			hide_obj.style.display =='none';
+			state_obj.style.display =='none';
+		}
+	</script>
+</body>
+</html>

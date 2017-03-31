@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数的调用</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function sum(num1,num2){
+			//在函数内部也可以定义变量
+			var res = num1 + num2;
+			//返回结果
+			return res;
+		}
+		//调用有返回值的结果,没有返回值的函数被调用返回结果是Undefined
+		var res1 = sum(5,3);
+		document.write(res1);
+
+		function abc(num3){
+			var num3 = num3 + 20;
+			alert('num3 = ' + num3);
+		}
+		var num3 = 30;
+		abc(num3);
+		alert('num3 = ' + num3);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

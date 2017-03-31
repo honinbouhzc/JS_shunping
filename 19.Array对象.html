@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//创建一个空数组
+		var my_arr1 = new Array();	
+		//然后赋值
+		my_arr1[0] = 10;
+		my_arr1[1] = 'beijing';
+		alert(my_arr1);//10,beijing
+
+		//创建数组的时候，直接赋值
+		var my_arr2 = new Array(10,90,'shenyang',true);
+		alert(my_arr2);//10,90,'shenyang',true
+		
+		//concat()连接两个或者更多的数组，并返回结果
+		var my_arr3 = my_arr1.concat(my_arr2);
+		alert(my_arr3);//10,beijing,10,90,shenyang,true
+
+		//sort()对数组进行排序，当对字符串排序时按照字符串的大小进行排序，从小到大按照ASCII码排序
+		var my_arr4 = new Array('a','b','e','c','d','fa','fc','fb','B');
+		my_arr4 = my_arr4.sort();
+		alert(my_arr4);//B,a,b,c,d,e,fa,fb,fc
+
+		//排序函数,回调函数
+		function sortNumber(a,b){
+			//返回一个大于0的数，从大到小
+			//返回一个小于0的数，从小到大
+			if (parseFloat(a)<parseFloat(b)) {
+				return -1;
+			}else{
+				return 1;
+			}
+		}
+
+		var my_arr5 = new Array(1,101,0,20,3);
+		my_arr5 = my_arr5.sort(sortNumber);
+		alert(my_arr5);//0,1,3,20,101
+
+		//pop()删除数组的最后一个元素并返回，push（）就是向数组中增加一个数据
+		var my_arr6 = new Array();
+		my_arr6.push('hello');//等价于my_arr6[0];
+		my_arr6.push(90);
+		my_arr6.push(true);
+		my_arr6.push('shenyang');
+		alert(my_arr6 +' '+ my_arr6.length);//hello,90,true,shenyang   4
+		my_arr6.pop();
+		alert(my_arr6 + ' '+ my_arr6.length);//hello,90,true    3
+
+		//case定义一个数组，输入9个任意整数，求该数组种奇数的平均值
+		var my_arr7 = new Array();
+		var input_val = 0;
+		var num_count = 0;
+		var sum = 0;
+		for(var i = 0; i < 9; i++){
+			input_val = prompt('请输入第' +( i+1) + '个数');
+			input_val = parseInt(input_val);
+			if(input_val % 2 != 0 ){
+				num_count++;
+				sum += input_val;
+			}
+			my_arr7.push(input_val);
+		}
+		var average = sum/num_count ;
+		alert(my_arr7 +' 奇数平均值'+ average);
+
+		/*
+		Boolean对象
+		布尔对象是一个把布尔值打包的对象，这个对象实际应用的不大了解即可
+		1.toString()把逻辑值转换为字符串，并返回结果
+		2.valueOf()返回布尔对象的原始值
+		*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>

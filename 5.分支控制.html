@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>分支控制</title>
+	<script type="text/javascript">
+		//if语句
+		var money = prompt('please enter your chosen number!');
+		money = parseFloat(money);
+		if(money >= 1000){
+			document.write('You have a good job!<br>');
+		}else{
+			document.write('Please choose a bigger number!');
+		}
+
+		//多分支
+		var answer = prompt('Did you see the SuperBowlLI? Yes:have seen.No:Haven\'t seen');
+		//var num1 = 100;
+		if (answer === 'yes') {
+			//嵌套
+			var score = prompt('Give us a score，please?');
+			score = parseFloat(score);
+			if (score >= 90) {
+				alert('You like the game');
+			}else{
+				alert('You feel the game is not good!');
+			}
+		}else if(answer === 'no'){ // || num1++
+			alert('You didn\'t know this game at all');
+		}else{
+			alert('Please enter yes or no, don\'t enter the others');
+		}
+		//alert('num1 = ' + num1);
+
+		//case
+	</script>
+</head>
+<body>
+
+</body>
+</html>

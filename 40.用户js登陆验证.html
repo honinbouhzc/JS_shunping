@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form onsubmit="checkForm()" method="post">
+		Email地址:<input type="text" id="email"><br>
+		Password:<input type="password" id="password"><i>密码必须大于或等于6位。</i><br>
+		<input type="submit" value="登陆">
+	</form>	
+	<script type="text/javascript">
+		function checkForm(){
+			//登陆是必须输入email和@和密码
+			//1 获取email和密码的对象
+			var email = $('email');
+			var pwd = $('password');
+
+			if(email.value == ''){
+				alert('请输入电子邮件');
+				return false;
+				//onubmit()如果返回为真表单会提交，false表单就会放弃提交
+			}else if(pwd.value ==''){
+				alert('请输入密码');
+				return false;
+			}else if(email.value.indexOf('@') == -1){
+				//indexOf()对字符的控制，字符串存在，返回大于等于0的值；不存在则返回一个负值
+				alert('电子邮件格式不正确');
+				return false;
+			}else if(pwd.value.length < 6){
+				alert('密码必须大于等于6位');
+				return false;
+			} else{
+				return true;
+			}
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</body>
+</html>

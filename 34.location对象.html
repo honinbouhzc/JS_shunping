@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location Object</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//location对象，记录了当前客户端的URL信息，主要用处是可以重新加载当前页面还可制定或者设置新的URL地址
+		
+		// function refresh(){
+		// 	location.reload(true);
+		// }
+		//定时刷新
+		//setInterval('refresh()',5000);
+		
+		//定时跳转
+		function redirect(){
+			location.href = 'http://www.hupu.com';
+		}
+		setTimeout('redirect()',5000);
+	</script>
+</head>
+<body>
+	<h1>Hello World！</h1>
+</body>
+</html>

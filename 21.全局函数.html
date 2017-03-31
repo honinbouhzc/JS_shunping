@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Global Function</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var uri = 'http://www.itbull.cn?index.php?name=泰牛&no=sn 001';
+		uri = encodeURI(uri);//主要针对旧的浏览器种的空格和中文
+		alert(uri);
+		uri = decodeURI(uri);//
+		alert(uri);
+
+		var str1 = '3 + 3 * (8 - 2) + 11';
+		var str2 = 'document.write('+str1+')';
+		eval('结果是: ' + str2); //eval()可以吧一个字符串当成脚本来运行
+		//isNaN（is not a number）true不是一个数，false是一个数
+		var num1 = 'hello';
+		alert(isNaN(num1));//true
+		var num2 = '-123.45';
+		var type = typeof(num2);
+		alert(isNaN(num2));//false
+		
+		// if(type == 'string'){
+		// 	alert('not a number');
+		// }else{
+		// 	if(!isNaN(num2)){
+		// 		alert('is a real number');
+		// 	}
+		// }
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

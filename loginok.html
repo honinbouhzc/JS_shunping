@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登陆成功</title>
+	<meta charset="utf-8">	
+</head>
+<body>
+<h1>登陆成功</h1>
+<p>恭喜你登陆成功，<span id='timer'>5</span>秒钟后跳转到管理页面</p>
+	<script type="text/javascript">
+		var timer_no = window.setInterval('countTime()',1000);
+		//用来不停地修改span中的5
+		function countTime(){
+			var span_obj = document.getElementById('timer');
+			var timer_val = span_obj.innerHTML;
+			timer_val -= 1;
+			span_obj.innerHTML = timer_val;
+			//判断timer_val，是不是等于0；
+			if(timer_val == 0){
+				//先销毁计时器
+				window.clearInterval('timer_no');
+				window.open('manage.html','_self');
+			}
+		}
+	</script>
+</body>
+</html>

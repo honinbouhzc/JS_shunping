@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html onclick="showStars(event)">
+<head>
+	<title>Event对象的案例1-星星点灯</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//1. 响应用户点击事件
+		//2. 获取到用户点击的横纵坐标
+		//3.把星星放到页面上
+		
+		function showStars(event){
+			//获取鼠标点击的横纵坐标
+			//alert('x = '+ event.clientX  + '|' + 'y = ' + event.clientY);
+
+			//把星星放到页面上
+			//1.创建一个图片元素
+			var img_obj = document.createElement('img');
+			//2 设置src的值和样式(位置，大小)
+			img_obj.src = './star.jpg';
+			img_obj.style.position = 'absolute';
+			img_obj.style.width = getRandom(30,100) + 'px';
+			//event.clientY -(img_obj.height/2) + 'px' + event.clientX -(img_obj.width/2)+ 'px'使鼠标点显示再图片正中
+			img_obj.style.top = event.clientY -(img_obj.height/2) + 'px';
+			img_obj.style.left = event.clientX -(img_obj.width/2)+ 'px';
+			//3 把这个图片元素加入到body中
+			document.body.appendChild(img_obj);
+		}
+
+		//使用一个函数，产生一个随机数
+		function getRandom(min,max){
+			var size = Math.random() * (max - min) + min;
+			size = Math.ceil(size);
+			return size;
+		}
+	</script>
+</head>
+<body bgcolor="black">
+
+</body>
+</html>

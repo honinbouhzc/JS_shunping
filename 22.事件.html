@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件概述</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#div1{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		//通过鼠标或者键盘再浏览器窗口或者网页元素上执行的操作就事件（Event）；
+		//由鼠标或者键盘引发的一连串的程序动作，叫事件驱动（Event-driver）；
+		//对事件惊醒处理的程序或者函数叫事件处理程序（Event Handle）；
+
+		//编写一个函数来相应用户点击的行为
+		function sayHello(event){
+			alert('sayHello!');
+			alert(event);//鼠标对象
+			for(var key in event){//打印对象详情	
+				document.write(key +":"+event[key]+'<br>');
+			}
+		}
+
+		//事件的分类：1 鼠标事件；2 键盘事件：keypress,keyup,keydown.3 HTML事件；window的error,unload,onload.4 其他事件。
+
+		//点击按钮显示当前时间
+		function showTime(){
+			var my_time = new Date();
+			my_time = my_time.toLocaleString();
+			window.alert(my_time);
+		}
+
+		//点击改变颜色
+		/*function showBlack(){
+			//获取到Div的节点对象
+			var div_obj = document.getElementById('div1');
+			div_obj.style.backgroundColor = 'black';
+			div_obj.style.width = '400px';
+		}
+
+		function showRed(){
+			//获取到Div的节点对象
+			var div_obj = document.getElementById('div1');
+			div_obj.style.backgroundColor = 'red';
+			div_obj.style.width = '300px';
+		}*/
+
+		function changeColor(color){
+			//alert(color);
+			var div_obj = document.getElementById('div1');
+			div_obj.style.backgroundColor = color;
+		}
+			
+		//还有一种写法,不写参数
+		/*function changeColor2(obj){
+			// for(var key in obj){
+			// 	document.write(key +':'+ obj + '<br>');
+			// }
+			var div_obj = document.getElementById('div1');
+			if(obj.value === '红色'){	
+			div_obj.style.backgroundColor = 'red'; 
+			}else{
+				div_obj.style.backgroundColor = 'black';
+			}
+		}*/
+
+		// function changeColor3(){
+		// 	var div_obj = document.getElementById('div1');
+		// 	if(div_obj.style.backgroundColor == 'red'){
+		// 		div_obj.style.backgroundColor = 'red';
+		// 	}else{
+		// 		div_obj.style.backgroundColor = 'black';
+		// 	}
+		// }
+	</script>
+</head>
+<body>
+<input type="button" name="mybutton" value="点击我吧" onclick="sayHello(event)">
+<select name="city">
+	<option name="beijing">北京</option>
+	<option name="tianjin">天津</option>
+	<option name="shanghai">上海</option>
+</select><hr>
+
+<input type="button" name="time" value="点击显示时间" onclick='showTime()'><hr>
+
+<div id="div1">
+	<!-- <input type="button" name="redbutton" value="红色" onclick="showRed()">
+	<input type="button" name="blackbutton" value="黑色" onclick="showBlack()"> -->
+	
+	<input type="button" name="redbutton" value="红色" onclick="changeColor('red')">
+	<input type="button" name="blackbutton" value="黑色" onclick="changeColor('black')">
+
+	<!-- this 表示的是当前的这个Html元素 -->
+	<!--  <input type="button" name="redbutton" value="红色" onclick="changeColor2(this)">
+	<input type="button" name="blackbutton" value="黑色" onclick="changeColor2(this)"> -->
+
+	<!-- <input type="button" value="红色" onclick="changeColor3()">
+	<input type="button" value="黑色" onclick="changeColor3()"> -->
+
+</div>
+</body>
+</html>

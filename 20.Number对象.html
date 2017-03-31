@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var num = 12345;
+		var str = num.toString();//把数字转化成字符串
+		document.write(typeof(str) + '<br>');//string
+		//number对象是混合型，可以直接使用number的方法，也可以创建一个number对象在使用方法
+		var num2 = new Number('2345');
+		document.write(typeof(num2) + '<br>');//object
+
+		var num3 = new Number(123456.789);
+		num3.toPrecision(2);
+		document.write(num3 + '<br>');
+
+		//valueOf()
+		var num4 = new Number(128645);
+		document.write(typeof(num4) + '<br>');//object
+		num4 = num4.valueOf();
+		document.write(typeof(num4) + '<br>');//number
+
+		//case
+		//请输出23的二进制字符串和十六进制字符串
+		var num5 = new Number(23);
+		var num5_2 = num5.toString(2);//10111
+		var num5_16 = num5.toString(16);//17
+		document.write(num5_2 +'  '+ num5_16 + '<br>');
+
+		//计算7/3的结果，并保留到小数点后两位（四舍五入）
+		var num6 = new Number(7/3);
+		num6 = num6.toFixed(2);
+		alert(num6);//2.33
+	</script>
+</head>
+<body>
+
+</body>
+</html>

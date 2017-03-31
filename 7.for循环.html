@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For loop</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//case
+		for(var i = 1; i <= 10; i++){
+			document.write(i + 'It is good.<br>');
+		}
+
+		显示12生肖图片
+		var num = prompt('please enter a num between 1 and 12?');
+		num = parseInt(num);
+		if(num > 12 || num <= 0){
+			for(var i = 0; i < 12; i++){
+				document.write('<img src="guanwu.png">');
+			}
+		}else{
+			for(j=1; j<=12; j++){
+				document.write('<img src=" ' + j +'.png">');
+			}
+		}
+
+		//打印整个金字塔
+		//   *
+		//  ***
+		// *****
+		var layer = prompt('Please enter level how many you want? It must be a integer number.');
+		layer = parseInt(layer);
+		for (var i = 1; i <= layer; i++) {
+			//打印空格
+			for(var j = 1;j <= layer-i; j++){
+				document.write('&nbsp;');
+			}
+			//打印星号
+			for (var k = 1; k <= 2*(i-1)+1; k++) {
+				document.write('*');
+			}
+			document.write('<br>');
+		}
+	</script>
+</head>
+<body>
+	<h1>金字塔</h1>
+	<script type="text/javascript">
+		//打印半边金字塔
+		// *
+		// **
+		// ***
+		// ****
+		// *****
+		var level = prompt('Please enter level how many you want? It must be a integer number.');
+		level = parseInt(level);//星号和层数是一样的
+		for(var i = 1; i <= level; i++){
+			for(var j = 1; j <= i; j++ ){
+				document.write('*');
+			}
+			document.write('<br>');
+		}
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event对象的案例2-控制输入数字</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var count = 0;
+		function checkNum(event){
+			//1.得到你输入的字母的keyCode--ASCII CODE值
+			//如何解决删除输入的数用回退键；回退键的键值是8
+			if(event.keyCode == 8){
+				//一旦return后面的代码不在执行
+				count--;
+				return true;
+			}
+
+
+			if(count == 6)
+			{
+				alert('已经超过6位，不能输入了');
+				return false;
+			}else if(event.keyCode < 48 || event.keyCode > 57){
+				//输入的字母的keyCode【键值】
+				alert('你输入的不是一个数');
+				//如何处理火狐下会放入字母的问题
+				return false;
+			}else{
+				count++;			
+			}
+			
+		}
+	</script>
+</head>
+<body>
+<!-- 对于IE来说如果得到一个false 就放弃onkeydown的输入 -->
+请输入一个6位数:<input type="text" id="num" onkeydown="checkNum(event)">
+</body>
+</html>

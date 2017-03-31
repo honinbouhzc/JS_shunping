@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据类型说明</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	//——————————数字类型暴扣整数型和浮点型——————————
+	var num1 = 100;
+	var num2 = 99.88;
+	var num6 = 78.66666666666666666667;
+	//toFixed()保留小数
+	var num7 = num6.toFixed(2);
+	document.write('num7保留两位小数后的值：' + num7 + '<br>');
+	//以0x开头的表示十六进制
+	var num3 = 0x111;
+
+	//以0开头的表示8进制
+	var num4 = 011;
+
+	//4e5 or 4E5 = 4 * 10的5次方
+	var num5 = 4e5;
+	
+	//————————————————布尔类型————————————
+	var bu1 = true;
+	var bu2 = false;	
+
+	//下面的几个值，表示假，比如，为空值，0，false，null和不赋值。
+
+	//再JS中，附一个非0的数，也可以表示为真
+	var t = 1;
+	if (t) {
+		window.alert("ok, It is true.");
+	}
+
+	//————————————字符串类型————————————
+	 var str = "hello world!";
+	 var str1 = "Hello hrafsg\"fsg";
+	 //document.write()可以把内容打印到页面上， +表示拼接
+	 document.write(str + ' ' + str1 + '<br>');
+
+	//—————————————定义变量的说明——————————
+	//声明了一个变量a
+	var a;
+	document.write('a 的值为：' + a + '<br>');
+	//初始化一个变量b
+	var b = 100;
+	document.write('b 的值为: ' + b + '<br>');
+	//声明了一个变量c，后赋值；
+	var c;
+	c = 300;
+	document.write('c 的值为 ：' + c + '<br>');
+
+	//——————————————练习题——————————————
+	var x = window.prompt('请输入游戏机的价格');
+	var y = window.prompt('请输入MP3的价格');
+	var total = 5 * x + 13 * y;
+	var average = total / 18;
+	var average = average.toFixed(2);
+	document.write('总价为：' + total + '<br>均价为：' + average +'<br>');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

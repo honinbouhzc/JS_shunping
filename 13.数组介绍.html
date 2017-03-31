@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//定义一个数组
+		var wg_weight_arr = [3,10,90,23,45,3];	
+		//数组包含的数据个数
+		var wg_weight_arr_size = wg_weight_arr.length;
+		document.write(wg_weight_arr_size + '<br>');//6
+		var total_weight = 0;
+		//遍历数组
+		for(var i=0;i<wg_weight_arr_size;i++){
+			document.write(wg_weight_arr[i] + '<br>');
+			total_weight += wg_weight_arr[i];
+		}
+		document.write('总体重：' + total_weight + '平均体重：' +(total_weight/wg_weight_arr_size)  + '<br>');//174 29
+
+		//数组的传递
+		var cats = ['hello kitty','Black cat'];
+		var c = cats;
+		document.write(c[0] + '<br>'); //hello kitty
+		c[0] = 'yellow cats';
+		document.write(c[0] + '<br>'); //yellow cats
+		document.write(cats[0] + '<br>');//yellow cats
+		document.write(cats.length + '<br>');//2
+		document.write(cats + '<br>');//yellow cats,Black cat
+		var c = null;
+		document.write(cats[1] + '<br>');//Black cat
+		//数据传递原则
+		//1 基本数据类型是值传递
+		//2 数组是引用传递
+		var a =[12,34];
+		var b = a;
+		b[0] = 5;
+		document.write('a[0] =' + a[0]+ 'b[0] =' + b[0]  + '<br>');//5 5
+	</script>
+</head>
+<body>
+
+</body>
+</html>

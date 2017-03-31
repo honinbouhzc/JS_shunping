@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Object</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#div1{
+			width:400px;
+			height:300px;
+			border:1px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		function change(val){
+		//1，得到div对象（属性和方法）
+			var div_obj = document.getElementById('div1');	
+			var pic_obj = document.getElementById('pic');	
+			if (val == 'big') {					
+				//2修改div的宽度和高度
+				div_obj.style.width = "500px";
+			}else if(val == 'small'){
+				div_obj.style.width = "300px";
+			}else if (val == 'img-big'){
+				pic_obj.style.width = "300px";
+			}else if (val == 'img-small'){
+				pic_obj.style.width = "100px"
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="变大" onclick="change('big')">
+	<input type="button" name="" value="变小" onclick="change('small')">
+	<input type="button" name="" value="图片变大" onclick="change('img-big')">
+	<input type="button" name="" value="图片变小" onclick="change('img-small')">
+	<div id="div1">div</div>
+	<img src="./date对象练习题.png" width="200px" id="pic">
+
+
+	
+</body>
+</html>

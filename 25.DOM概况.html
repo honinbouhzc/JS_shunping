@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM概况</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//DOM = Document Object Model;是HTML与XML的应用编程接口（API），将整个页面映射为一个由层次节点组成的文件;分为HTML DOM，CSS DOM，XML DOM，Event DOM；
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<script type="text/javascript">
+		//test:获取DOM div的节点名称节点类型和节点值
+		var div_obj = document.getElementById('div1');
+		document.write(div_obj.nodeName + "<br>");//div
+		document.write(div_obj.nodeType + "<br>");//1(element)
+		document.write(div_obj.innerHTML + "<br>");
+	</script>
+	<hr>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件监听</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function mama(){
+			alert('知道了，我来救你');
+		}
+		function baba(){
+			alert('知道了，我也来救你');
+		}
+	</script>
+</head>
+<body>
+<!-- 一个事件可以被多个函数监听，中间用逗号分隔 -->
+<input type="button" name="" value="救命啊" onclick="mama(),baba()">
+</body>
+</html>

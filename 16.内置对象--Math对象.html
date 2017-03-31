@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>内置对象-Math对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//内部类:再JS种有提供好的类，（Array,String,Number,boolean,Date,Math），通过类，我们创建对应的实例，这个实例我们成为对象，该对象有对应的属性和方法。
+
+		//Math
+		var a = -123;
+		var b = Math.abs(a);
+		alert(b);//123
+
+		var c = 123.455;
+		var d = Math.ceil(c);//向上取整
+		alert(d);//124
+		var e = Math.floor(c);//向下取整
+		alert(e);//123
+
+		var f = Math.max(10,11,123,456,-90);
+		var g = Math.min(10,11,123,456,-90);
+		alert(f);//456
+		alert(g);//-90
+
+		var h = 3456.3;
+		var i = Math.round(h);//四舍五入
+		alert(i);//3456 
+		
+
+		//随机生成0-1的小数
+		var j = Math.random();
+		alert(j);
+		var k = Math.random()*11;
+		k = Math.round(k);
+		alert(k);
+
+		//case 0-11 3,5是一等奖，降低中奖概率
+		var no = Math.random() * 12;
+		var flag = 0;
+
+		for (var i = 0; i < 200; i++) {
+			var no = Math.random() * 12;
+			no = Math.random()*12;
+			if (no == 3||no == 5) {
+				flag++;
+				if(flag == 100){
+					window.alert('恭喜你中奖了');
+					flag = 0;
+				}
+			} 
+		}
+		
+		
+
+		
+		
+
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

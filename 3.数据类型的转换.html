@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据类型的转换</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//自动转换
+		var a = 1.2;
+		window.alert(typeof(a));
+		var a = 45;
+		window.alert(typeof(a));
+		var a = 'It is a word.';
+		window.alert(typeof(a));
+
+		//强制转换 字符串转数字
+		var str1 = "123";
+		window.alert(typeof(str1));
+		str1 = parseInt(str1);
+		window.alert(typeof(str1));
+		var str2 = '123.456';
+		window.alert(typeof(str2));
+		str2 = parseFloat(str2);
+		window.alert(typeof(str2));
+
+		//数字转换成字符串
+		var num3  = 100;
+		window.alert(typeof(num3));
+		num3 = num3 + '';
+		window.alert(typeof(num3));
+
+		//实例
+		var num1 = window.prompt('请输入一个数');	
+		var num2 = window.prompt('请输入一个数');
+		var res1 = num1 + num2;
+		window.alert('结果是：' + res1 + '<br>');
+		var res2 = parseFloat(num1) + parseFloat(num2);
+		window.alert('结果是：' + res2 + '<br>');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

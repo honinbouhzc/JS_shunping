@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Window对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//confirm();
+		if(window.confirm('pls, need i install the software?')){//返回布尔值
+			alert('yeah, successful');
+		}else{
+			alert('no');
+		}
+
+		//需求，让一个函数，反复被调用
+		function sayHello(){
+			alert('ok,Heoll');
+		}
+		//setInterval()第一个参数指定调用的函数名；第二个参数指定调用的间隔时间，时间是毫秒计算
+		window.setInterval('sayHello()',1000);
+		// clearInterval() 方法可取消由 setInterval() 设置的 timeout。clearInterval() 方法的参数必须是由 setInterval() 返回的 ID 值
+	</script>
+</head>
+<body>
+
+</body>
+</html>

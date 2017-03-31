@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch Statemant</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	// switch(expression){
+	// 	case 变量/常量：
+	// 	语句块；
+	// 	break；
+
+	// 	case 变量/常量：
+	// 	语句块；
+	// 	break；
+
+	// 	case 变量/常量：
+	// 	语句块；
+	// 	break；
+
+	// 	case 变量/常量：
+	// 	语句块；
+	// 	break；
+
+	// 	default：
+	//	语句块；
+	// 	break；
+	// }
+	var str = prompt('please enter a charactor?');	
+	//case 关键字后可以是常量或者变量可以是啊，也可以是str
+	//break语句一定要在case语句块后面写上，否则会一直执行下去，真到碰到break或者执行完所有的case语句
+	//default的位置，不起绝对作用，首先把用户的输入和case进行匹配，如果匹配上，就开始执行，如果一个case都没有匹配上，就执行default
+	switch(str){
+		case 'a':
+		alert('Monday');
+		break;//break跳出整个switch语句
+
+		case 'b':
+		alert('Tuesday');
+		break;
+
+		default：
+		alert('Confusing');
+		break;
+	}
+	//如果是判断有具体的值比如a，b等可以用switch语句
+	//如果是一个范围的比较，我们选择if语句
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

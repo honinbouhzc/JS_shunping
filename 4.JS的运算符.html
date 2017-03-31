@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS运算符</title>
+	<script type="text/javascript">
+		//————————————————算术运算符
+		var a = 10;
+		var b = 20;
+		var c1 = a + b;
+		var c2 = a - b;
+		var c3 = a * b;
+		var c4 = a / b;
+		document.write('c1 = ' + c1 + '<br>c2 = ' + c2 + '<br>c3 = ' + c3 + '<br>c4 = ' + c4);
+
+		var num1 = 15;
+		var num2 = 11;
+		var res1 = num1 % num2;
+		document.write('<br>res1 = ' + res1);
+
+		//++自加, --自减
+		var num3 = 10;
+		num3++; //等于num3 = num3 + 1;
+		var num4 = num3++; //等价于var num4 = num3; num3++;
+		document.write('<br>num4 = ' + num4);//11
+		document.write('<br>num3 = ' + num3);//12
+
+		var num5 = 50;
+		++num5;
+		document.write('<br>num5 = ' + num5);//51
+
+		var num6 = ++num5;//当我们的++写在变量的前面，就是先自加再赋值；
+		document.write('<br>num5 = ' + num5);//52
+		document.write('<br>num6 = ' + num6);//52
+
+		var num7 = num5++;//后++就是先赋值再自加；
+		document.write('<br>num7 = ' + num7);//52
+		document.write('<br>num5 = ' + num5);//53
+
+		var num8 = 10;
+		var num9 = (num8++);//等价于 num9 = num8, num8++;
+		document.write('<br>num9 = ' + num9);//10
+		
+		//————————————————赋值运算符
+		var num11 = 10;
+		num11 += 100;//左加运算符，等价于num11 = num11 + 100;
+		document.write('<br>num11 = ' + num11);
+		
+		var num12 = 10;
+		num12 -= 100;//等价于num11 = num11 - 100;
+		document.write('<br>num12 = ' + num12);
+
+		var num13 = 10;
+		num13 *= 100;//等价于num11 = num11 * 100;
+		document.write('<br>num13 = ' + num13);
+
+		var num14 = 10;
+		num14 /= 100;//等价于num11 = num11 / 100;
+		document.write('<br>num14 = ' + num14);
+
+		var num15 = 10;
+		num15 %= 100;//等价于num11 = num11 / 100;
+		document.write('<br>num15 = ' + num15);
+
+		//————————————————关系运算符
+		var num21 = 101;
+		var num22 = 100;
+		//等号再JS种只是对内容或值进行比较
+		if(num21 == num22){
+			document.write('<br>num21 等于 num22');
+		} else if(num21 > num22){
+			document.write('<br>num21 大于 num22');
+		} else if(num21 < num22){
+			document.write('<br>num21 小于 num22');
+		}
+
+		if(num21 >= num22){
+			document.write('<br>num21 大于等于 num22');
+		}else if(num21 >= num22){
+			document.write('<br>num21 小于等于 num22');
+		}
+
+		if(num21 != num22){
+			document.write('<br>num21 不等于 num22');
+		}
+
+		//全等 ===  值和数据类型都相等
+		var str1 = '123';
+		var str2 = 123 + '';
+		if(str1 === str2){
+			document.write('<br>str1 全等于 str2')
+		}
+		
+		//case
+		var num23 = window.prompt('Please enter num23');
+		var num24 = window.prompt('Please enter num24');
+		window.alert('num23的类型是：' + typeof(num23));
+		num23 = parseFloat(num23);
+		num24 = parseFloat(num24);
+		if(num23 === num24){
+			window.alert('num23 全等于 num24');
+		} else if(num23 > num24){
+			window.alert('<br>num23 大于 num24');
+		} else if(num23 < num24){
+			window.alert('<br>num23 小于 num24');
+		}
+
+		//————————————————逻辑运算符
+		//&& and 如果前面关系运算结果为假，后面不再进行判断，这种现象称为短路; || or; ! not;
+		var num31 = 90;
+		var num32 = 90;
+		var num33 = 100;
+		if (num31 === num32 && num31 < num33) { 
+			document.write('<br>test result is ok!');
+		}else{
+			document.write('<br>test result isn\'t ok!');
+		}
+
+		var a1 = 3;
+		var a2 = 4;
+		var a3 = 1;
+		if (a1<a2 && a1++) {
+			document.write('<br>ok'+ a1);
+		}else{
+			document.write('<br>bad'+ a1);
+		}
+
+		if (a1>a2 && a1++) {
+			document.write('<br>ok'+ a1);
+		}
+		document.write('<br>' + a1);
+		//在逻辑运算符中0，false，null，undefined，NaN均为假
+		if (a1<a2 && --a3 && a1++) {
+			document.write('<br>ok'+ a3 + a1);
+		}
+		document.write('<br>' + a3);
+		document.write('<br>' + a1);			
+
+		//case
+		var num41 = 100;
+		var num42 = 1;
+		//关于or的说明，只要一个为真，整体为真。当前面一个为真，后面一个就不执行了，称为短路与。结果是最先为真的结果的值为结果
+		var num43 = num42 || ++num41;
+		document.write('<br>num43 = ' + num43);//1
+		document.write('<br>num41 = ' + num41);//100
+		var num44 = 100;
+		var num45 = 0;
+		var num46 = num45 || ++num44;
+		document.write('<br>num46 = ' + num46);//101
+		document.write('<br>num44 = ' + num44);//101
+		var num47 = 100;
+		var num48 = 1;
+		var num49 = num48 && ++num47;
+		document.write('<br>num49 = ' + num49);//101
+		document.write('<br>num47 = ' + num47);//101
+		
+		//逻辑非最后的结果就是true 或者false
+		</script>
+</head>
+<body>
+
+</body>
+</html>

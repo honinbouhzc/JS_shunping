@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登陆验证</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function checkUser(){
+			//介绍一个再表单中，简单得到输入框和密码框的值
+			// alert(loginform.userName.value + ':' + loginform.password.value);
+			if(loginform.userName.value == 'eric' && loginform.password.value == '123456'){
+				//跳转到下一个页面
+				window.open('loginok.html','_blank');
+			}else{
+				alert('用户名或者密码不正确');
+				loginform.userName.value = '';
+				loginform.password.value = '';
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="" name="loginform">
+		用户名：<input type="text" name="userName"><br>
+		密  码：<input type="password" name="password"><br>
+		<input type="button" onclick="checkUser()"value="登陆">
+	</form>	
+</body>
+</html>

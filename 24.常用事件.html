@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用事件</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function vote(obj){
+			alert('你选择了 ：' + obj.value);
+		}
+	</script>
+</head>
+<body>
+<!-- 选项更改才触发onchange，同样的选项没有效果 -->
+请选择喜欢的水果：
+<select id="friut" onchange="vote(this)">
+	<option value="pear">黎</option>
+	<option value="apple">苹果</option>
+	<option value="orange">橙子</option>
+</select>
+</body>
+</html>

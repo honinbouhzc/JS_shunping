@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.msg{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" onsubmit="checkForm()">
+	<!-- onfocus 表示鼠标移动到输入框，onblur()表示鼠标离开输入框 -->
+		Email Address: <input type="text" id="email" onfocus="focusEmail()" onblur="blurEmail()"><span id="emailMsg"></span><br>
+		
+		Your Alias:<input type="test" id="alias"><br>
+		
+		password:<input type="text" id="password" onfocus="focusPwd()" onblur="blurPwd()"><span id="passMsg"></span><br>
+		
+		password Confirmation：<input type="text" id="password2" onfocus="focusPwd2()" onblur="blurPwd2()"><span id='passMsg2'></span><br>
+		
+		Gender:<label><input type="radio" id="male" checked='checked'>Male</label>&nbsp;&nbsp;&nbsp;<label><input type="radio" id="female">Female</label><span id="genderMsg"></span><br>
+		
+		Hobby:<label><input type="checkbox" name='hobby' id="Football">Football</label>&nbsp;&nbsp;&nbsp;<label><input type="checkbox" name='hobby' id="Rugby">Rugby</label><label><input type="checkbox" name='hobby' id="Soccer">Soccer</label><span id="hobbyMsg"></span><br>
+		
+		Location:<select id='state' name="state" onfocus="focusState()" onblur="blurState()">
+			<option value="">select</option>
+			<option value="1">NSW</option>
+			<option value="2">VIC</option>
+			<option value="3">QLD</option>
+			<option value="4">TAS</option>
+		</select>
+		<span id="proMsg"></span><br>
+		<input type="submit" value="确认注册">
+	</form>
+	<script type="text/javascript">
+		function $(id){
+			return document.getElementById(id);
+		}
+
+	//	当鼠标移入输入框时
+		function focusEmail(){
+			var emailMsg = $('emailMsg');
+			//设置提示信息
+			emailMsg.innerHTML = '请输入电子邮件';
+			//设置一个样式
+			emailMsg.className = 'msg';
+
+		}
+		//当鼠标离开输入框是，对电子邮件的格式进行校验
+		function blurEmail(){
+			//获取对象
+			var email = $('email');
+			if(email.value == ''){
+				emailMsg.innerHTML = '电子邮件不能为空';
+				emailMsg.className = 'msg';
+				return false;
+			}else if(email.value.indexOf('@') == -1){
+				emailMsg.innerHTML = '电子邮件格式不对';
+				emailMsg.className = 'msg';
+				return false;
+			}else{
+				emailMsg.innerHTML = 'OK!';
+				emailMsg.className = 'msg';
+				return true;	
+			}
+		}
+
+		//密码校验
+		function focusPwd(){
+			var pwdMsg = $('pwdMsg');
+			passMsg.innerHTML = '请输入密码';
+			passMsg.className = 'msg';
+		}
+
+		function blurPwd(){
+			var password = $('password');
+			if(password.value == ''){
+				passMsg.innerHTML = '密码不能为空';
+				passMsg.className = 'msg';
+				return false;
+			} else if(password.value.length < 6){
+				passMsg.innerHTML = '密码长度必须大于6位';
+				passMsg.className = 'msg';
+				return false;
+			} else{
+				passMsg.innerHTML = 'OK!';
+				passMsg.className = 'msg';
+				return true;
+			}
+		}
+
+		//判断第二个密码框的输入情况		
+		function focusPwd2(){
+			var passMsg2 = $('passMsg2');
+			passMsg2.innerHTML = '请输入密码';
+			passMsg2.className = 'msg';
+		}
+
+		function blurPwd2(){
+			var password = $('password');
+			var password2 = $('password2');
+			if(password2.value == ''){
+				passMsg2.innerHTML = '密码不能为空';
+				passMsg2.className = 'msg';
+				return false;
+			} else if(password2.value.length < 6){
+				passMsg2.innerHTML = '密码长度必须大于6位';
+				passMsg2.className = 'msg';
+				return false;
+			}else if(password.value != password2.value){
+				passMsg2.innerHTML = '此处输入的密码必须和上面的一致';
+				passMsg2.className = 'msg';
+				return false;
+			}else{
+				passMsg2.innerHTML = 'OK!';
+				passMsg2.className = 'msg';
+				return true;
+			}
+		}
+		
+		//校验一下State是否选择
+		function focusState(){
+			var proMsg = $('proMsg');
+			proMsg.innerHTML = '必须选择地区';
+			proMsg.className = 'msg';
+		}
+		function blurState(){
+			var state = $('state');
+			var proMsg = $('proMsg');
+			if(state.value == ''){
+				proMsg.innerHTML = '哥们，忘记选择地区了';
+				proMsg.className = 'msg';
+				return false;
+			}else{
+				proMsg.innerHTML = 'OK';
+				proMsg.className = 'msg';
+				return true;
+			}
+		}
+
+		var hobby_count = 0;
+		function checkHobby(){
+			//校验复选框中是否选择了hobby
+			var hobby = document.getElementsByName('hobby');
+			for (var i = 0; i < hobby.length; i++){
+				//如果复选框的某个值被选种，则值为true，否则为false
+				if(hobby[i].checked == true){
+				hobby_count++;
+				}
+			}
+			if(hobby_count == 0 ){
+				alert('必须选择一个爱好');
+				return false;
+			}else{
+				return true;
+			}
+		}
+
+		function checkForm(){
+			//提交是检测邮箱，密码，确认密码，爱好，地区
+			if(!blurEmail()){
+				return false;
+			}
+			if(!blurPwd()){
+				return false;
+			}
+			if(!blurPwd2()){
+				return false;
+			}
+			if(!checkHobby()){
+				return false;
+			}
+			if(!blurState()){
+				return false;
+			}
+
+			return true;
+
+		}
+	</script>
+</body>
+</html>

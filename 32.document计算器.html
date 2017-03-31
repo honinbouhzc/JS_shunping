@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document计算器</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	//经常使用document.getElementById,我们就封装成一个函数，函数名叫$
+	function $(id){
+		return document.getElementById(id);
+	}
+
+		function calc(){
+			//获取到num1的对象
+			var num1_obj = $('num1');
+			//获取num1对象填写的值
+			var num1_val = num1_obj.value;
+			//获取num1_val转换成数字
+			num1_val  = parseFloat(num1_val);
+
+			//获取到num2的对象
+			var num2_obj = $('num2');
+			//获取num2对象填写的值
+			var num2_val = num2_obj.value;
+			//获取num2_val转换成数字
+			num2_val  = parseFloat(num2_val);
+
+			//获取到num1的对象
+			var sym_obj = $('symbol');
+			//获取num1对象填写的值
+			var sym_val = sym_obj.value;
+			var res = 0;
+			//开始计算
+			switch(sym_val){
+				//判断用户输入的是什么，然后做相应的处理
+			case '+':
+			res = num1_val + num2_val;
+			break;
+			case '-':
+			res = num1_val - num2_val;
+			break;
+			case '*':
+			res = num1_val * num2_val;
+			break;
+			case '/':
+			res = num1_val / num2_val;
+			break;
+			case '%':
+			res = num1_val % num2_val;
+			break;
+			// default:
+			// alert('enter errors');
+			// break;
+			}
+			//把值返回到结果框
+			//1获取result对象
+			var result = $('result');
+			//放值
+			result.value = res.toFixed(2);
+		}	
+	</script>
+</head>
+<body>
+	<h1>计算器</h1>
+	请输入一个数：<input type="text" id='num1'><br>
+	请选择运算符号：<select id='symbol' name="operator">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select><br>
+	请再输入一个数：<input type="text" id='num2'><br>
+	计算：<input type="button" value="=" onclick="calc()"><br>
+	得出结果：<input type="text" id="result"><br>
+	<hr>
+	<a href="./31.document对象.html">跳转到：31.document对象.html</a>
+
+	<input type="button" value="向前" onclick="history.forward();">
+	<input type="button" value="向后" onclick="history.back();">
+</body>
+</html>

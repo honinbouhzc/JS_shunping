@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>使用window定时器，完成小闹钟</title>
+	<meta charset="utf-8">
+	
+</head>
+<body>
+小闹钟:<span id="clock"></span>
+<input type="button" name="" value="开始计时" onclick="startTime()">
+<input type="button" name="" value="停止计时" onclick="stopTime()">
+<script type="text/javascript">
+	var clock_obj = document.getElementById('clock');
+	var time_now = 0;
+	var count = 0;
+	var timer_id = window.setInterval('showTime()',10000);
+	//alert(timer_id);
+	function showTime(){
+	var time_now = new Date();
+	//time_now = time_now.toLocaleString();
+	time_now = clock_obj.innerHTMl;
+	count++;
+		if(count == 10){
+			alert('stop!!');
+			//走10秒中后自动停止
+			window.clearInterval(timer_id);
+		}	
+	}
+	
+	// function startTime(){
+	// 	var time_now = new Date();
+	// 	time_now = time_now.toLocaleString();
+	// 	time_now = clock_obj.innerHTMl;
+	// 	window.setInterval('startTime()',5000);
+	// 	alert('start');
+	// }
+
+	// function stopTime(){
+	// 	window.clearInterval(timer_id);
+	// 	alert('stop');
+	// }
+	
+
+</script>
+</body>
+</html>

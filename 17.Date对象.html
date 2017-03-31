@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//new关键字，表示新创建或实例化一个对象；my_date是对象实例的名称，Date就是一个类
+		var my_date  = new Date();
+		document.write(typeof(my_date)+'<br>');//object
+		document.write(my_date+'<br>');//打印
+		document.write(my_date.toLocaleString());
+		//显示今日xxxx年xx月xx日
+		var year = my_date.getFullYear();
+		var month = my_date.getMonth() + 1;
+		var date = my_date.getDate();
+		document.write('今天是：' + year +'年' + month +'月' + date + '日' );
+
+		//根据用户指定的时间来创建date对象,
+
+		var my_date1 = new Date(2018,9,9,11,11,11);//注意月份是0-11月，这里9就是10月
+		document.write('<br>my_date1:' + my_date1.toLocaleString());
+
+		var my_date2 = new Date('2019/9/9 11:11:11');//此方法月份正常1-12月
+		document.write('<br>my_date2:' +my_date2.toLocaleString());
+
+		//计算相差多少天
+		var date_inter = (my_date2 - my_date)/1000/3600/24;
+		document.write('<br>相差' + Math.ceil(date_inter) + '天');
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

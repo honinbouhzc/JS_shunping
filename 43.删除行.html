@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>delete row</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="state">
+		<table>
+			<tr><td>NSW</td><td><a href="javascript:void(0)" onclick="deleteBook(this)">DELETE</a></td></tr>
+			<tr><td>VIC</td><td><a href="#" onclick="deleteBook(this)">DELETE</a></td></tr>
+			<tr><td>QLD</td><td><a href="#" onclick="deleteBook(this)">DELETE</a></td></tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		function deleteBook(obj){
+			if(window.confirm('真的要删除吗')){
+			//查找被删除的节点
+			var del_obj = obj.parentNode.parentNode;
+			//查找被删除的节点的父节点
+			var father = del_obj.parentNode;
+			father.removeChild(del_obj);
+			}
+		}
+	</script>
+</body>
+</html>
